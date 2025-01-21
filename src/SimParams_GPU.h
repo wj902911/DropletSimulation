@@ -38,15 +38,15 @@ enum DropletType
 struct SimParameters_GPU
 {
 public:
-	SimParameters_GPU();
+	SimParameters_GPU(int numDropx = 100);
 
 	~SimParameters_GPU();
 
 	double sampleSizeFactor = 1.0;
 	bool isShear = false;
-	bool isBulk = true;
+	bool isBulk = false;
 
-	bool fineModel = true;
+	bool fineModel = false;
 	double sigma = 2.73e-10;
 	double epsilon = 4.91e-21;
 	double m = 2.99e-26;
@@ -68,7 +68,7 @@ public:
 	//double dropletDensity = 1e9;//mg/m^3   t in ms
 	double dropletDensity = 1000;//kg/m^3   t in s
 
-	int distributionPattern = 6;
+	int distributionPattern = 2;
 	std::string path_to_diameter="resource/";
 	std::string path_to_position_x = "resource/";
 	std::string path_to_position_y = "resource/";
@@ -97,28 +97,28 @@ public:
 	//int displacementSign = 1;
 	double boundaryOffset = mean_radius * 3;
 
-	bool   springsEnabled = false;//true
+	bool   springsEnabled = true;//true
 	bool   canSnap = false;//true
 	bool   springDampingEnabled = true;//false
-	bool   globalDampingEnabled = false;//true
-	double springDamplingRatio = 1.0;//these two sum up less than 0.5
-	double globalDampingRatio = 0.1;//these two sum up less than 0.5
+	bool   globalDampingEnabled = true;//true
+	double springDamplingRatio = 0.1;//these two sum up less than 0.5
+	double globalDampingRatio = 0.01;//these two sum up less than 0.5
 	//double maxAddhesionDistRatio = 0.9;
-	double toltalSeperationLengthRatio = 4.0;//1.1
+	double toltalSeperationLengthRatio = 1.0;//1.1
 
 	bool   gravityEnabled = false;
 	double gravityG = -9.8;
 
 	bool mechanicalLoadingEnabled = false;
-	bool fixedPermeability = true;
-	double maxPermeability = 0.001;//0.01, 0.05
+	bool fixedPermeability = false;
+	double maxPermeability = 0.0001;//0.01, 0.05
 	double maxDisplacement = mean_radius * 3;//m
 	double maxCompressionStrain = 0.01;
 	double maxTensileStrain = 0.001;
 	double increaseTime = 0.1;//s
 	double stretchingSpeed = maxDisplacement / increaseTime;//m/s
 	double loadingSpeed = stretchingSpeed;
-	bool   flowEnabled = false;
+	bool   flowEnabled = true;
 	//bool   addConnectorWhenTouching = true;
 
 
@@ -127,7 +127,7 @@ public:
 	bool   outputData = 0;
 	bool   saveFrames = 0;
 	double saveFrameInterval = 0.0002;//s
-	double cameraDistanceRatio = 3.0;
+	double cameraDistanceRatio = 1.0;
 
 	double criticalConcentrationDifference = 1e-3;
 
@@ -144,7 +144,7 @@ public:
 	double dropletMass = 1.0;//1.0
 	double springStiffness = 1.0;//1
 	double springStiffness_com = 1.0;//1
-	int    numDroplets_x = 8;//320
+	int    numDroplets_x = 20;//320
 	int    numDroplets_y = 2;//64
 	int    numDroplets = numDroplets_x * numDroplets_y;//20480
 	double lowerSubValue = 1.0;
@@ -154,7 +154,7 @@ public:
 	double permeability = 0.0;//0.01, 0.05
 	double displacement = 2.5e-5;//m
 	double delta_displacement = 0.0001;
-	double delta_permeability = 0.00001;
+	double delta_permeability = 0.0000001;
 	double SpringRestLengthRatio = 0.8;//0.8
 	double specimenThickness = specimenLength / 5.0;//m
 	double4 initialBoundingBox = { 0.0,0.0,0.0,0.0 };

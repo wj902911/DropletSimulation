@@ -5,8 +5,10 @@
 #include <thrust/extrema.h>
 #include <fstream>
 
-SimParameters_GPU::SimParameters_GPU()
+SimParameters_GPU::SimParameters_GPU(int numDropx)
 {
+	numDroplets_x = numDropx;
+
 	switch (dropletType)
 	{
 	case DropletType::DPhPC:
@@ -26,7 +28,7 @@ SimParameters_GPU::SimParameters_GPU()
 		break;
 	}
 	}
-	//initialDropletRadius = specimenLength / SpringRestLengthRatio / numDroplets_x / 2.;
+	initialDropletRadius = specimenLength / SpringRestLengthRatio / numDroplets_x / 2.;
 	if (distributionPattern == 6)
 		dropletMass = m;
 	else

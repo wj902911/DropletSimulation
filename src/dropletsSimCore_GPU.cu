@@ -275,7 +275,7 @@ __global__ void initDroplets(Droplet_GPU* droplets, const SimParameters_GPU para
 	}
 	}
 
-#if 0
+#if 1
 	if (idy < params.numDroplets_y / 2)
 	{
 		droplets[idy * params.numDroplets_x + idx] = Droplet_GPU(pos,
@@ -1617,6 +1617,11 @@ __global__ void assignDisplacementDropletsOutsideArea_kernel(Droplet_GPU* drople
 
 DropletsSimCore_GPU::DropletsSimCore_GPU()
 {
+}
+
+DropletsSimCore_GPU::DropletsSimCore_GPU(int numDropx)
+{
+	params_ = SimParameters_GPU(numDropx);
 }
 
 DropletsSimCore_GPU::~DropletsSimCore_GPU()

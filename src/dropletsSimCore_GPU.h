@@ -240,6 +240,7 @@ class DropletsSimCore_GPU
 {
 public:
 	DropletsSimCore_GPU();
+	DropletsSimCore_GPU(int numDropx);
 	~DropletsSimCore_GPU();
 
 	void initSimulation();
