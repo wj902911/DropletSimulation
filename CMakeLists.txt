@@ -6,9 +6,9 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 option(USE_CUDA "Build with CUDA support" OFF) # Default to ON; set to OFF to disable CUDA
 
 if(USE_CUDA)
-    project(MyIGAGuiApp LANGUAGES CXX CUDA) # Include CUDA in project setup
+    project(DropletSimulation LANGUAGES CXX CUDA) # Include CUDA in project setup
 else()
-    project(MyIGAGuiApp LANGUAGES CXX) # Exclude CUDA from project setup
+    project(DropletSimulation LANGUAGES CXX) # Exclude CUDA from project setup
 endif()
 
 # Set C++ and CUDA standards
