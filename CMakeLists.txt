@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Add a CMake option to control CUDA inclusion
-option(USE_CUDA "Build with CUDA support" OFF) # Default to ON; set to OFF to disable CUDA
+option(USE_CUDA "Build with CUDA support" ON) # Default to ON; set to OFF to disable CUDA
 
 if(USE_CUDA)
     project(DropletSimulation LANGUAGES CXX CUDA) # Include CUDA in project setup
