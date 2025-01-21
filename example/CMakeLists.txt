@@ -14,7 +14,7 @@ foreach(EXAMPLE_FILE ${EXAMPLE_FILES})
     add_executable(${EXAMPLE_NAME} ${EXAMPLE_FILE})
     set_property(TARGET ${EXAMPLE_NAME} PROPERTY FOLDER "example")
 
-    target_link_libraries(${EXAMPLE_NAME} IGA glfw glad imgui ${GLFW_LIBRARIES} ${CUDA_LIBS} Freetype::Freetype)
+    target_link_libraries(${EXAMPLE_NAME} DSLib glfw glad imgui ${GLFW_LIBRARIES} ${CUDA_LIBS} Freetype::Freetype)
     target_include_directories(${EXAMPLE_NAME} PRIVATE ${GLFW_INCLUDE_DIRS} ${FREETYPE_INCLUDE_DIRS})
 
     # Set the working directory for Visual Studio to the executable directory
