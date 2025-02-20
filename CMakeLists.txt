@@ -45,8 +45,8 @@ else()
     set(CUDA_LIBS "") # Empty if CUDA is not used
 endif()
 
-set(FREETYPE_INCLUDE_DIRS "C:/pakages/include")
-set(FREETYPE_LIBRARY "C:/pakages/lib/freetype.lib")
+set(FREETYPE_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}/external/pakages/include")
+set(FREETYPE_LIBRARY "${PROJECT_SOURCE_DIR}/external/pakages/lib/freetype.lib")
 find_package(Freetype REQUIRED)
 
 # Include resource directory copying
