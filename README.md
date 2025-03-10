@@ -47,16 +47,18 @@ Usually, the compiling time should less than 5 minutes.
 An example simulation is provided in `main.cu`. This example creates a 2D specimen measuring 25 mm x 5 mm, containing 20 x 4 droplets. The top two layers of droplets have a higher concentration than the bottom two layers, causing the top layers to shrink and the bottom layers to expand. This results in the specimen folding up, as illustrated in the GIF above. To reproduce the simulation in our paper, change the dropet number in line-67 of main.cu to 2000.
 
 ### Running the Simulation
-1. After building the project, run the simulation using one of the following commands, depending on your build configuration:
-   
-   ```sh
-   ./example/Debug/main # For the Debug build 
-   ./example/release/main # For the Release build  
-   ```
-   
-2. The initial state of the specimen will appear in a separate window.
-3. Press the `Enter` key to start the simulation.
-4. Press `Enter` again to pause the simulation.
+1. To run the simulation:  
+   - If using **Visual Studio**, navigate to the directory containing `main.exe` and execute it.  
+   - If using **CMake**, navigate to the `build` directory and run one of the following commands, depending on your build configuration:
+     
+     ```sh
+     ./example/Debug/main  # For the Debug build  
+     ./example/Release/main  # For the Release build  
+     ```
+
+2. The initial state of the specimen will appear in a separate window.  
+3. Press the `Enter` key to start the simulation.  
+4. Press `Enter` again to pause the simulation. 
 
 ### Camera Controls
 You can adjust the observation position and angle using the following controls:
