@@ -20,4 +20,8 @@ foreach(EXAMPLE_FILE ${EXAMPLE_FILES})
     # Set the working directory for Visual Studio to the executable directory
     set_target_properties(${EXAMPLE_NAME} PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
 
+    # Post-build command: copy the resource directory to the target's output directory
+    add_custom_command(TARGET ${EXAMPLE_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_SOURCE_DIR}/resource" $<TARGET_FILE_DIR:${EXAMPLE_NAME}>/resource)
+
 endforeach()
