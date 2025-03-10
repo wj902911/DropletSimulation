@@ -10,6 +10,7 @@ To compile and run this project, you need:
 - **CMake** (Tested with version 3.31.5)
 - **Visual Studio** (Recommended for Windows, tested with version 17.9.0)
 - **CUDA-compatible GPU** (Tested with Nvidia GeForce RTX 3080 Ti)
+- **Windows 11** (Recommended, tested with version 24H2)
 
 All the dependencies are included in the external directory. There's no need of additional downloads besides this repository.
 
