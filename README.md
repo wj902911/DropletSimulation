@@ -7,9 +7,9 @@ This project simulates mechanical and osmotic interactions between droplets. It 
 
 ## Requirements
 To compile and run this project, you need:
-- **CMake**
-- **Visual Studio** (recommended for Windows)
-- **CUDA-compatible GPU**
+- **CMake** (Tested with version 3.31.5)
+- **Visual Studio** (Recommended for Windows, tested with version 17.9.0)
+- **CUDA-compatible GPU** (Tested with Nvidia GeForce RTX 3080 Ti)
 
 All the dependencies are included in the external directory. There's no need of additional downloads besides this repository.
 
@@ -21,34 +21,38 @@ All the dependencies are included in the external directory. There's no need of 
 This method applies to **both Windows and Linux**, but only tested on windows for now.
 1. **Open a terminal (or Command Prompt on Windows)**.
 2. **Navigate to the project directory**:
+   
    ```sh
    cd /path/to/DropletSimulation
+   
 3. Create a `build` directory and enter it:
+   
    ```sh
    mkdir build && cd build
+   
 4. Run CMake to generate build files:
+   
    ```sh
    cmake ..
+   
 5. Compile the project:
+   
    ```sh
    cmake --build .
-6. Run the simulation, the built file can be found in
-   ```sh
-   ./example/Debug/main
-   ```
-   or
-   ```sh
-   ./example/release/main
-   ```
-   depending on you building configuration.
-
+   
 Usually, the compiling time should less than 5 minutes.
 
 ## Usage
-An example simulation is provided in `main.cu`. This example creates a 2D specimen measuring 25 mm x 5 mm, containing 20 x 4 droplets. The top two layers of droplets have a higher concentration than the bottom two layers, causing the top layers to shrink and the bottom layers to expand. This results in the specimen folding up, as illustrated in the GIF above. To reproduce the simulation in our paper, change the dropet number in 67 line of main.cu to 2000.
+An example simulation is provided in `main.cu`. This example creates a 2D specimen measuring 25 mm x 5 mm, containing 20 x 4 droplets. The top two layers of droplets have a higher concentration than the bottom two layers, causing the top layers to shrink and the bottom layers to expand. This results in the specimen folding up, as illustrated in the GIF above. To reproduce the simulation in our paper, change the dropet number in line-67 of main.cu to 2000.
 
 ### Running the Simulation
-1. Build the project and run the example.
+1. After building the project, run the simulation using one of the following commands, depending on your build configuration:
+   
+   ```sh
+   ./example/Debug/main # For the Debug build 
+   ./example/release/main # For the Release build  
+   ```
+   
 2. The initial state of the specimen will appear in a separate window.
 3. Press the `Enter` key to start the simulation.
 4. Press `Enter` again to pause the simulation.
