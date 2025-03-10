@@ -9,7 +9,9 @@ This project simulates mechanical and osmotic interactions between droplets. It 
 To compile and run this project, you need:
 - **CMake**
 - **Visual Studio** (recommended for Windows)
-- **CUDA-compatible GPU** (for acceleration)
+- **CUDA-compatible GPU**
+
+All the dependencies are included in the external directory. There's no need of additional downloads besides this repository.
 
 ## Compiling
 ### **Method 1: Using Visual Studio (Windows)**
