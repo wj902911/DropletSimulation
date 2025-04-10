@@ -41,7 +41,7 @@ This method applies to **both Windows and Linux**, but only tested on windows fo
    ```sh
    cmake --build .
    
-Usually, the compiling time should less than 5 minutes.
+Usually, the compiling time should be less than 5 minutes.
 
 ## Usage
 An example simulation is provided in `main.cu`. This example creates a 2D specimen measuring 25 mm x 5 mm, containing 20 x 4 droplets. The top two layers of droplets have a higher concentration than the bottom two layers, causing the top layers to shrink and the bottom layers to expand. This results in the specimen folding up, as illustrated in the GIF above. To reproduce the simulation in our paper, change the dropet number in line-67 of main.cu to 2000.
